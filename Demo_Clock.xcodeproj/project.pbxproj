@@ -15,6 +15,7 @@
 		D7E8FE7B1C192A3A005E908F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E8FE791C192A3A005E908F /* LaunchScreen.storyboard */; };
 		D7E8FE861C192A3A005E908F /* Demo_ClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE851C192A3A005E908F /* Demo_ClockTests.m */; };
 		D7E8FE911C192A3A005E908F /* Demo_ClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE901C192A3A005E908F /* Demo_ClockUITests.m */; };
+		D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEA01C192A75005E908F /* ClockFace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D7E8FE8C1C192A3A005E908F /* Demo_ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_ClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE901C192A3A005E908F /* Demo_ClockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo_ClockUITests.m; sourceTree = "<group>"; };
 		D7E8FE921C192A3A005E908F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7E8FE9F1C192A75005E908F /* ClockFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockFace.h; path = Clock/ClockFace.h; sourceTree = "<group>"; };
+		D7E8FEA01C192A75005E908F /* ClockFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockFace.m; path = Clock/ClockFace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
 				D7E8FE711C192A39005E908F /* ViewController.h */,
 				D7E8FE721C192A39005E908F /* ViewController.m */,
+				D7E8FE9E1C192A4A005E908F /* Clock */,
 				D7E8FE741C192A39005E908F /* Main.storyboard */,
 				D7E8FE771C192A3A005E908F /* Assets.xcassets */,
 				D7E8FE791C192A3A005E908F /* LaunchScreen.storyboard */,
@@ -138,6 +142,15 @@
 				D7E8FE921C192A3A005E908F /* Info.plist */,
 			);
 			path = Demo_ClockUITests;
+			sourceTree = "<group>";
+		};
+		D7E8FE9E1C192A4A005E908F /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8FE9F1C192A75005E908F /* ClockFace.h */,
+				D7E8FEA01C192A75005E908F /* ClockFace.m */,
+			);
+			name = Clock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E8FE731C192A39005E908F /* ViewController.m in Sources */,
+				D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */,
 				D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */,
 				D7E8FE6D1C192A39005E908F /* main.m in Sources */,
 			);
