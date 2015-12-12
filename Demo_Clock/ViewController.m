@@ -28,14 +28,17 @@
     
     self.timeLabel = [[TimeDisplayLabel alloc] init] ;
     CGRect timeLbRect = CGRectZero ;
-    timeLbRect.size = CGSizeMake(300, 20) ;
+    timeLbRect.size = CGSizeMake(200, 20) ;
     self.timeLabel.frame = timeLbRect ;
-    self.timeLabel.center = CGPointMake(self.view.bounds.size.width / 2, 100 + timeLbRect.size.height / 2) ;
+    self.timeLabel.center = CGPointMake((self.view.bounds.size.width) / 2, 100 + timeLbRect.size.height / 2) ;
     self.timeLabel.font = [UIFont systemFontOfSize:18.0] ;
-    self.timeLabel.textAlignment = NSTextAlignmentCenter ;
     [self.view addSubview:self.timeLabel] ;
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(clockMove) userInfo:nil repeats:YES] ;
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                      target:self
+                                                    selector:@selector(clockMove)
+                                                    userInfo:nil
+                                                     repeats:YES] ;
     [timer fire] ;
 }
 

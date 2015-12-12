@@ -20,7 +20,7 @@
     int minute = [time getMinute] ;
     int second = [time getSecond] ;
     
-    self.text = [NSString stringWithFormat:@"%@ : %@ : %@" ,
+    self.text = [NSString stringWithFormat:@"%@ : %@  %@" ,
                   [NSString numberDisplayInClock:hour] ,
                   [NSString numberDisplayInClock:minute] ,
                   [NSString numberDisplayInClock:second]] ;
