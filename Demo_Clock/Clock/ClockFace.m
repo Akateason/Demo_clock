@@ -8,6 +8,7 @@
 
 #import "ClockFace.h"
 #import <UIKit/UIKit.h>
+#import "NSDate+Addition.h"
 
 @interface ClockFace ()
 
@@ -61,12 +62,9 @@
 {
     _time = time;
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSCalendarUnitSecond
-                                               fromDate:time];
-    self.hourHand.affineTransform   = CGAffineTransformMakeRotation(components.hour / 12.0 * 2.0 * M_PI);
-    self.minuteHand.affineTransform = CGAffineTransformMakeRotation(components.minute / 60.0 * 2.0 * M_PI);
-    self.secondHand.affineTransform = CGAffineTransformMakeRotation(components.second / 60.0 * 2.0 * M_PI);
+    self.hourHand.affineTransform   = CGAffineTransformMakeRotation([time getHour] / 12.0 * 2.0 * M_PI);
+    self.minuteHand.affineTransform = CGAffineTransformMakeRotation([time getMinute] / 60.0 * 2.0 * M_PI);
+    self.secondHand.affineTransform = CGAffineTransformMakeRotation([time getSecond] / 60.0 * 2.0 * M_PI);
 }
 
 

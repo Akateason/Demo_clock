@@ -16,6 +16,9 @@
 		D7E8FE861C192A3A005E908F /* Demo_ClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE851C192A3A005E908F /* Demo_ClockTests.m */; };
 		D7E8FE911C192A3A005E908F /* Demo_ClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE901C192A3A005E908F /* Demo_ClockUITests.m */; };
 		D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEA01C192A75005E908F /* ClockFace.m */; };
+		D7E8FEAA1C1BD921005E908F /* NSDate+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */; };
+		D7E8FEAD1C1BDCB6005E908F /* TimeDisplayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */; };
+		D7E8FEB01C1BE355005E908F /* NSString+NumInClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		D7E8FE921C192A3A005E908F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7E8FE9F1C192A75005E908F /* ClockFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockFace.h; path = Clock/ClockFace.h; sourceTree = "<group>"; };
 		D7E8FEA01C192A75005E908F /* ClockFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockFace.m; path = Clock/ClockFace.m; sourceTree = "<group>"; };
+		D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Addition.h"; sourceTree = "<group>"; };
+		D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Addition.m"; sourceTree = "<group>"; };
+		D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDisplayLabel.h; sourceTree = "<group>"; };
+		D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDisplayLabel.m; sourceTree = "<group>"; };
+		D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NumInClock.h"; sourceTree = "<group>"; };
+		D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumInClock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,12 @@
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
 				D7E8FE711C192A39005E908F /* ViewController.h */,
 				D7E8FE721C192A39005E908F /* ViewController.m */,
+				D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */,
+				D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */,
+				D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */,
+				D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */,
+				D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */,
+				D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */,
 				D7E8FE9E1C192A4A005E908F /* Clock */,
 				D7E8FE741C192A39005E908F /* Main.storyboard */,
 				D7E8FE771C192A3A005E908F /* Assets.xcassets */,
@@ -283,8 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E8FEAA1C1BD921005E908F /* NSDate+Addition.m in Sources */,
 				D7E8FE731C192A39005E908F /* ViewController.m in Sources */,
+				D7E8FEAD1C1BDCB6005E908F /* TimeDisplayLabel.m in Sources */,
 				D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */,
+				D7E8FEB01C1BE355005E908F /* NSString+NumInClock.m in Sources */,
 				D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */,
 				D7E8FE6D1C192A39005E908F /* main.m in Sources */,
 			);
@@ -512,6 +530,7 @@
 				D7E8FE971C192A3A005E908F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7E8FE981C192A3A005E908F /* Build configuration list for PBXNativeTarget "Demo_ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +539,7 @@
 				D7E8FE9A1C192A3A005E908F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7E8FE9B1C192A3A005E908F /* Build configuration list for PBXNativeTarget "Demo_ClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +548,7 @@
 				D7E8FE9D1C192A3A005E908F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
