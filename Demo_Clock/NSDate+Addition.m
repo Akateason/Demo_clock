@@ -7,6 +7,8 @@
 //
 
 #import "NSDate+Addition.h"
+#import "NSString+NumInClock.h"
+
 
 @implementation NSDate (Addition)
 
@@ -75,6 +77,18 @@
     if(year%100 == 0)
         return 28;
     return 29;
+}
+
+- (NSString *)getTimeString
+{
+    int hour = [self getHour] ;
+    int minute = [self getMinute] ;
+    int second = [self getSecond] ;
+    
+    return [NSString stringWithFormat:@"%@ : %@ : %@" ,
+                 [NSString numberDisplayInClock:hour] ,
+                 [NSString numberDisplayInClock:minute] ,
+                 [NSString numberDisplayInClock:second]] ;
 }
 
 @end

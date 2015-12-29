@@ -8,7 +8,6 @@
 
 #import "TimeDisplayLabel.h"
 #import "NSDate+Addition.h"
-#import "NSString+NumInClock.h"
 
 @implementation TimeDisplayLabel
 
@@ -16,14 +15,7 @@
 {
     _time = time ;
     
-    int hour = [time getHour] ;
-    int minute = [time getMinute] ;
-    int second = [time getSecond] ;
-    
-    self.text = [NSString stringWithFormat:@"%@ : %@  %@" ,
-                  [NSString numberDisplayInClock:hour] ,
-                  [NSString numberDisplayInClock:minute] ,
-                  [NSString numberDisplayInClock:second]] ;
+    self.text = [time getTimeString] ;
 }
 
 /*

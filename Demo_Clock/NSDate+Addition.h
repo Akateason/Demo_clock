@@ -27,4 +27,6 @@
 //当前月有多少天
 + (int)daysInMonth:(int)imonth year:(int)year ;
 
+- (NSString *)getTimeString ;
+
 @end
