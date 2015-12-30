@@ -10,7 +10,6 @@
 
 @interface NSDate (Addition)
 
-#pragma mark - NSCalendar
 //拿 当前 年月日
 - (int)getYear;
 

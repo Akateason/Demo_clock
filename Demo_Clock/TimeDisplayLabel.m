@@ -11,6 +11,13 @@
 
 @implementation TimeDisplayLabel
 
+//- (void)layoutSubviews
+//{
+//    [super layoutSubviews] ;
+//    
+//    [self sizeToFit] ;
+//}
+
 - (void)setTime:(NSDate *)time
 {
     _time = time ;

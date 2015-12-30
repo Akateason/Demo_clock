@@ -39,7 +39,7 @@
         _timeLabel = [[TimeDisplayLabel alloc] init] ;
         if (![_timeLabel superview]) {
             CGRect timeLbRect = CGRectZero ;
-            timeLbRect.size = CGSizeMake(108, 20) ;
+            timeLbRect.size = CGSizeMake(110, 20) ;
             _timeLabel.frame = timeLbRect ;
             _timeLabel.center = CGPointMake((self.view.bounds.size.width) / 2, 100 + timeLbRect.size.height / 2) ;
             _timeLabel.font = [UIFont boldSystemFontOfSize:20.0] ;
@@ -48,7 +48,6 @@
     }
     return _timeLabel ;
 }
-
 
 - (UIButton *)btAlarm
 {
@@ -74,11 +73,10 @@
 {
     if ([self.datePicker superview]) return ;
     
-    
     [self.datePicker setDate:[NSDate date] animated:YES] ;
     self.datePicker.alpha = 0 ;
     [self.view addSubview:self.datePicker] ;
-
+    
     [UIView animateWithDuration:1.0 animations:^{
         self.view.backgroundColor = [UIColor darkGrayColor] ;
         self.datePicker.alpha = 1 ;

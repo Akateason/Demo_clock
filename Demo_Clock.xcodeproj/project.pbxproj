@@ -90,6 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D74D49421C33AD2C00FBF02A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */,
+				D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */,
+				D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */,
+				D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		D74D49431C33AD3D00FBF02A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */,
+				D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D7E8FE5F1C192A39005E908F = {
 			isa = PBXGroup;
 			children = (
@@ -117,13 +137,9 @@
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
 				D7E8FE711C192A39005E908F /* ViewController.h */,
 				D7E8FE721C192A39005E908F /* ViewController.m */,
-				D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */,
-				D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */,
-				D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */,
-				D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */,
-				D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */,
-				D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */,
 				D7E8FE9E1C192A4A005E908F /* Clock */,
+				D74D49431C33AD3D00FBF02A /* View */,
+				D74D49421C33AD2C00FBF02A /* Util */,
 				D7E8FE741C192A39005E908F /* Main.storyboard */,
 				D7E8FE771C192A3A005E908F /* Assets.xcassets */,
 				D7E8FE791C192A3A005E908F /* LaunchScreen.storyboard */,
