@@ -10,7 +10,8 @@
 #import "ClockFace.h"
 #import "TimeDisplayLabel.h"
 #import "NSDate+Addition.h"
-
+#import "AlarmManager.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) ClockFace *clockFace ;
@@ -20,6 +21,15 @@
 @end
 
 @implementation ViewController
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        ((AppDelegate *)[UIApplication sharedApplication].delegate).mainVC = self ;
+    }
+    return self;
+}
 
 - (ClockFace *)clockFace
 {
@@ -54,7 +64,8 @@
     if (!_btAlarm) {
         _btAlarm = [[UIButton alloc] init] ;
         [_btAlarm setTitle:@"想要闹钟?" forState:0] ;
-        [_btAlarm setTitleColor:[UIColor blackColor] forState:0] ;
+        [_btAlarm setTitleColor:[UIColor blackColor] forState:UIControlStateNormal] ;
+        [_btAlarm setTitleColor:[UIColor redColor] forState:UIControlStateSelected] ;
         [_btAlarm sizeToFit] ;
         
         if (![_btAlarm superview]) {
@@ -64,15 +75,25 @@
             [self.view addSubview:_btAlarm] ;
             _btAlarm.center = CGPointMake(self.view.bounds.size.width / 2, self.timeLabel.frame.origin.y + self.timeLabel.frame.size.height + 40 + 10) ;
         }
-        [_btAlarm addTarget:self action:@selector(showDatePicker) forControlEvents:UIControlEventTouchUpInside] ;
+        [_btAlarm addTarget:self action:@selector(dealBtAlarm) forControlEvents:UIControlEventTouchUpInside] ;
     }
     return _btAlarm ;
 }
 
-- (void)showDatePicker
+- (void)dealBtAlarm
 {
     if ([self.datePicker superview]) return ;
-    
+
+    if (!self.btAlarm.selected) {
+        [self showDatePicker] ;
+    }
+    else {
+        [self askConfirmToChangeAlarmTime] ;
+    }
+}
+
+- (void)showDatePicker
+{
     [self.datePicker setDate:[NSDate date] animated:YES] ;
     self.datePicker.alpha = 0 ;
     [self.view addSubview:self.datePicker] ;
@@ -83,6 +104,17 @@
         [self.btAlarm setTitleColor:[UIColor whiteColor] forState:0] ;
     } completion:^(BOOL finished) {
     }] ;
+}
+
+- (void)askConfirmToChangeAlarmTime
+{
+    UIAlertController *alertCtrller = [UIAlertController alertControllerWithTitle:@"确认要更改闹钟的时间了吗?!?!?" message:@"呵呵哒" preferredStyle:UIAlertControllerStyleAlert] ;
+    [alertCtrller addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        self.btAlarm.selected = NO ;
+        [self showDatePicker] ;
+    }]] ;
+    [alertCtrller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]] ;
+    [self presentViewController:alertCtrller animated:YES completion:nil];
 }
 
 - (UIDatePicker *)datePicker
@@ -104,8 +136,10 @@
 
 - (void)dateValueChanged
 {
-    NSString *str = [NSString stringWithFormat:@"我要设置%@的闹钟哦",[self.datePicker.date getTimeString]] ;
-    [self.btAlarm setTitle:str forState:0] ;
+    NSString *strNomarl = [NSString stringWithFormat:@"我要设置%@的闹钟了哦",[self.datePicker.date getTimeString]] ;
+    [self.btAlarm setTitle:strNomarl forState:UIControlStateNormal] ;
+    NSString *strSelect = [NSString stringWithFormat:@"%@的闹钟已经设置!",[self.datePicker.date getTimeString]] ;
+    [self.btAlarm setTitle:strSelect forState:UIControlStateSelected] ;
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -116,20 +150,41 @@
         [alertCtrller addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             [self confirmSetAlarm] ;
         }]] ;
-        [alertCtrller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]] ;
+        [alertCtrller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSString *strSelect = [NSString stringWithFormat:@"%@的闹钟已经设置!",[[AlarmManager shareInstance].alarmTime getTimeString]] ;
+            [self.btAlarm setTitle:strSelect forState:UIControlStateSelected] ;
+            [self letDatePickerDisappear] ;
+            self.btAlarm.selected = YES ;
+        }]] ;
         [self presentViewController:alertCtrller animated:YES completion:nil];
     }
 }
 
 - (void)confirmSetAlarm
 {
+    [self.btAlarm setTitle:nil forState:UIControlStateNormal] ;
+    [AlarmManager shareInstance].alarmTime = self.datePicker.date ;
+    self.btAlarm.selected = YES ;
+    
+    [self letDatePickerDisappear] ;
+}
+
+- (void)letDatePickerDisappear
+{
     [self.datePicker removeFromSuperview] ;
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:1.0
+                     animations:^{
         self.datePicker.alpha = 0 ;
         self.view.backgroundColor = [UIColor whiteColor] ;
         [self.btAlarm setTitleColor:[UIColor blackColor] forState:0] ;
+    }
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                         }
     }] ;
 }
+
+
 
 - (void)viewDidLoad
 {

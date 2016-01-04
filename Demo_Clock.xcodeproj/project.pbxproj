@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74D494A1C3A16CF00FBF02A /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49491C3A16CF00FBF02A /* AlarmManager.m */; };
 		D7E8FE6D1C192A39005E908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6C1C192A39005E908F /* main.m */; };
 		D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6F1C192A39005E908F /* AppDelegate.m */; };
 		D7E8FE731C192A39005E908F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE721C192A39005E908F /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D74D49481C3A16CF00FBF02A /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmManager.h; path = Model/AlarmManager.h; sourceTree = "<group>"; };
+		D74D49491C3A16CF00FBF02A /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmManager.m; path = Model/AlarmManager.m; sourceTree = "<group>"; };
 		D7E8FE681C192A39005E908F /* Demo_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE6C1C192A39005E908F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7E8FE6E1C192A39005E908F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +113,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		D74D49471C3A169B00FBF02A /* GlobalAlarmTime */ = {
+			isa = PBXGroup;
+			children = (
+				D74D49481C3A16CF00FBF02A /* AlarmManager.h */,
+				D74D49491C3A16CF00FBF02A /* AlarmManager.m */,
+			);
+			name = GlobalAlarmTime;
+			sourceTree = "<group>";
+		};
 		D7E8FE5F1C192A39005E908F = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +149,7 @@
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
 				D7E8FE711C192A39005E908F /* ViewController.h */,
 				D7E8FE721C192A39005E908F /* ViewController.m */,
+				D74D49471C3A169B00FBF02A /* GlobalAlarmTime */,
 				D7E8FE9E1C192A4A005E908F /* Clock */,
 				D74D49431C33AD3D00FBF02A /* View */,
 				D74D49421C33AD2C00FBF02A /* Util */,
@@ -251,6 +264,11 @@
 				TargetAttributes = {
 					D7E8FE671C192A39005E908F = {
 						CreatedOnToolsVersion = 7.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D7E8FE801C192A3A005E908F = {
 						CreatedOnToolsVersion = 7.1;
@@ -315,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E8FEAA1C1BD921005E908F /* NSDate+Addition.m in Sources */,
+				D74D494A1C3A16CF00FBF02A /* AlarmManager.m in Sources */,
 				D7E8FE731C192A39005E908F /* ViewController.m in Sources */,
 				D7E8FEAD1C1BDCB6005E908F /* TimeDisplayLabel.m in Sources */,
 				D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */,

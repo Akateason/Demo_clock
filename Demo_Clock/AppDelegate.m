@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AlarmManager.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AlarmManager shareInstance] ;
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum] ;
+
     return YES;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+//    [[NSNotificationCenter defaultCenter] postNotificationName:NSNOTIFICATION_BG_FETCH_NOTES
+//                                                        object:completionHandler] ;
+}
+
+#pragma mark - didReceiveLocalNotification
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
