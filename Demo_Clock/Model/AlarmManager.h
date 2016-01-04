@@ -13,5 +13,6 @@
 + (AlarmManager *)shareInstance ;
 
 @property (nonatomic,strong) NSDate *alarmTime ;
+- (void)getAlarmDeta ;
 
 @end

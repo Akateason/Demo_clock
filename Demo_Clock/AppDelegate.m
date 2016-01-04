@@ -28,6 +28,22 @@
 {
 //    [[NSNotificationCenter defaultCenter] postNotificationName:NSNOTIFICATION_BG_FETCH_NOTES
 //                                                        object:completionHandler] ;
+
+    if (![AlarmManager shareInstance].alarmTime) {
+        completionHandler(UIBackgroundFetchResultNoData) ;
+        return ;
+    }
+    
+    UILocalNotification *localNofify = [[UILocalNotification alloc] init];
+    localNofify.alertBody = [NSString stringWithFormat:@"闹钟来了,呵呵呵?!?"] ;
+    localNofify.soundName = UILocalNotificationDefaultSoundName ;
+    localNofify.repeatInterval = 5 ;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:localNofify] ;
+    
+    [[AlarmManager shareInstance] getAlarmDeta] ;
+    
+    completionHandler(UIBackgroundFetchResultNewData) ;
+    
 }
 
 #pragma mark - didReceiveLocalNotification
