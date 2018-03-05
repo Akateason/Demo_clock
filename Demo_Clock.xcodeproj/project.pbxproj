@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D74D494A1C3A16CF00FBF02A /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49491C3A16CF00FBF02A /* AlarmManager.m */; };
+		76E4DC52916059A8343F439A /* Pods_Demo_Clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE010918BE464B58CC8590B /* Pods_Demo_Clock.framework */; };
+		8F7F014D204D4510008D4399 /* NSDate+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F014C204D4510008D4399 /* NSDate+Add.m */; };
 		D7E8FE6D1C192A39005E908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6C1C192A39005E908F /* main.m */; };
 		D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6F1C192A39005E908F /* AppDelegate.m */; };
 		D7E8FE731C192A39005E908F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE721C192A39005E908F /* ViewController.m */; };
@@ -17,7 +18,6 @@
 		D7E8FE861C192A3A005E908F /* Demo_ClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE851C192A3A005E908F /* Demo_ClockTests.m */; };
 		D7E8FE911C192A3A005E908F /* Demo_ClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE901C192A3A005E908F /* Demo_ClockUITests.m */; };
 		D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEA01C192A75005E908F /* ClockFace.m */; };
-		D7E8FEAA1C1BD921005E908F /* NSDate+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */; };
 		D7E8FEAD1C1BDCB6005E908F /* TimeDisplayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */; };
 		D7E8FEB01C1BE355005E908F /* NSString+NumInClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D74D49481C3A16CF00FBF02A /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmManager.h; path = Model/AlarmManager.h; sourceTree = "<group>"; };
-		D74D49491C3A16CF00FBF02A /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmManager.m; path = Model/AlarmManager.m; sourceTree = "<group>"; };
+		6083E961B3853FE23FEA3BEE /* Pods-Demo_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo_Clock/Pods-Demo_Clock.debug.xcconfig"; sourceTree = "<group>"; };
+		8B9901C02A72524629B269AD /* Pods-Demo_Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo_Clock/Pods-Demo_Clock.release.xcconfig"; sourceTree = "<group>"; };
+		8F7F014B204D4510008D4399 /* NSDate+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+Add.h"; path = "Util/NSDate+Add.h"; sourceTree = "<group>"; };
+		8F7F014C204D4510008D4399 /* NSDate+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Add.m"; path = "Util/NSDate+Add.m"; sourceTree = "<group>"; };
+		BAE010918BE464B58CC8590B /* Pods_Demo_Clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE681C192A39005E908F /* Demo_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE6C1C192A39005E908F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7E8FE6E1C192A39005E908F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,8 +63,6 @@
 		D7E8FE921C192A3A005E908F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7E8FE9F1C192A75005E908F /* ClockFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockFace.h; path = Clock/ClockFace.h; sourceTree = "<group>"; };
 		D7E8FEA01C192A75005E908F /* ClockFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockFace.m; path = Clock/ClockFace.m; sourceTree = "<group>"; };
-		D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Addition.h"; sourceTree = "<group>"; };
-		D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Addition.m"; sourceTree = "<group>"; };
 		D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDisplayLabel.h; sourceTree = "<group>"; };
 		D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDisplayLabel.m; sourceTree = "<group>"; };
 		D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NumInClock.h"; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E4DC52916059A8343F439A /* Pods_Demo_Clock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,33 +95,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D74D49421C33AD2C00FBF02A /* Util */ = {
+		2AAD7F19107DEB88C79C95D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D7E8FEA81C1BD921005E908F /* NSDate+Addition.h */,
-				D7E8FEA91C1BD921005E908F /* NSDate+Addition.m */,
-				D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */,
-				D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */,
+				6083E961B3853FE23FEA3BEE /* Pods-Demo_Clock.debug.xcconfig */,
+				8B9901C02A72524629B269AD /* Pods-Demo_Clock.release.xcconfig */,
 			);
-			name = Util;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		D74D49431C33AD3D00FBF02A /* View */ = {
+		8F7F014A204D4216008D4399 /* V+VC */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8FE711C192A39005E908F /* ViewController.h */,
+				D7E8FE721C192A39005E908F /* ViewController.m */,
+			);
+			name = "V+VC";
+			sourceTree = "<group>";
+		};
+		9435DF38AA400BB21FC4D29F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAE010918BE464B58CC8590B /* Pods_Demo_Clock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D74D49421C33AD2C00FBF02A /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				D7E8FEAB1C1BDCB5005E908F /* TimeDisplayLabel.h */,
 				D7E8FEAC1C1BDCB6005E908F /* TimeDisplayLabel.m */,
+				D7E8FEAE1C1BE355005E908F /* NSString+NumInClock.h */,
+				D7E8FEAF1C1BE355005E908F /* NSString+NumInClock.m */,
+				8F7F014B204D4510008D4399 /* NSDate+Add.h */,
+				8F7F014C204D4510008D4399 /* NSDate+Add.m */,
 			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		D74D49471C3A169B00FBF02A /* GlobalAlarmTime */ = {
-			isa = PBXGroup;
-			children = (
-				D74D49481C3A16CF00FBF02A /* AlarmManager.h */,
-				D74D49491C3A16CF00FBF02A /* AlarmManager.m */,
-			);
-			name = GlobalAlarmTime;
+			name = Util;
 			sourceTree = "<group>";
 		};
 		D7E8FE5F1C192A39005E908F = {
@@ -129,6 +141,8 @@
 				D7E8FE841C192A3A005E908F /* Demo_ClockTests */,
 				D7E8FE8F1C192A3A005E908F /* Demo_ClockUITests */,
 				D7E8FE691C192A39005E908F /* Products */,
+				2AAD7F19107DEB88C79C95D2 /* Pods */,
+				9435DF38AA400BB21FC4D29F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,11 +161,8 @@
 			children = (
 				D7E8FE6E1C192A39005E908F /* AppDelegate.h */,
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
-				D7E8FE711C192A39005E908F /* ViewController.h */,
-				D7E8FE721C192A39005E908F /* ViewController.m */,
-				D74D49471C3A169B00FBF02A /* GlobalAlarmTime */,
 				D7E8FE9E1C192A4A005E908F /* Clock */,
-				D74D49431C33AD3D00FBF02A /* View */,
+				8F7F014A204D4216008D4399 /* V+VC */,
 				D74D49421C33AD2C00FBF02A /* Util */,
 				D7E8FE741C192A39005E908F /* Main.storyboard */,
 				D7E8FE771C192A3A005E908F /* Assets.xcassets */,
@@ -204,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7E8FE951C192A3A005E908F /* Build configuration list for PBXNativeTarget "Demo_Clock" */;
 			buildPhases = (
+				DDECD3781576A92A2C4EF266 /* [CP] Check Pods Manifest.lock */,
 				D7E8FE641C192A39005E908F /* Sources */,
 				D7E8FE651C192A39005E908F /* Frameworks */,
 				D7E8FE661C192A39005E908F /* Resources */,
+				AA24CD0FDEBD79981D9F9392 /* [CP] Embed Pods Frameworks */,
+				7A5D88DA9B9673801FFA42A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +278,7 @@
 				TargetAttributes = {
 					D7E8FE671C192A39005E908F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 83SLLMU85B;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -327,16 +342,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A5D88DA9B9673801FFA42A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo_Clock/Pods-Demo_Clock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA24CD0FDEBD79981D9F9392 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Demo_Clock/Pods-Demo_Clock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JKCategories/JKCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/XTColor/XTColor.framework",
+				"${BUILT_PRODUCTS_DIR}/XTFMDB/XTFMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/XTReq/XTReq.framework",
+				"${BUILT_PRODUCTS_DIR}/XTlib/XTlib.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTFMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTReq.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTlib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo_Clock/Pods-Demo_Clock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDECD3781576A92A2C4EF266 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo_Clock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D7E8FE641C192A39005E908F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7E8FEAA1C1BD921005E908F /* NSDate+Addition.m in Sources */,
-				D74D494A1C3A16CF00FBF02A /* AlarmManager.m in Sources */,
 				D7E8FE731C192A39005E908F /* ViewController.m in Sources */,
 				D7E8FEAD1C1BDCB6005E908F /* TimeDisplayLabel.m in Sources */,
 				D7E8FEA11C192A75005E908F /* ClockFace.m in Sources */,
+				8F7F014D204D4510008D4399 /* NSDate+Add.m in Sources */,
 				D7E8FEB01C1BE355005E908F /* NSString+NumInClock.m in Sources */,
 				D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */,
 				D7E8FE6D1C192A39005E908F /* main.m in Sources */,
@@ -478,8 +578,10 @@
 		};
 		D7E8FE961C192A3A005E908F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6083E961B3853FE23FEA3BEE /* Pods-Demo_Clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 83SLLMU85B;
 				INFOPLIST_FILE = Demo_Clock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teason.Demo-Clock";
@@ -489,8 +591,10 @@
 		};
 		D7E8FE971C192A3A005E908F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B9901C02A72524629B269AD /* Pods-Demo_Clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 83SLLMU85B;
 				INFOPLIST_FILE = Demo_Clock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teason.Demo-Clock";

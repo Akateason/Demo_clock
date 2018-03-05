@@ -7,7 +7,7 @@
 //
 
 #import "TimeDisplayLabel.h"
-#import "NSDate+Addition.h"
+#import "NSDate+Add.h"
 
 @implementation TimeDisplayLabel
 

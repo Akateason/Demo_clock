@@ -9,9 +9,8 @@
 #import "ViewController.h"
 #import "ClockFace.h"
 #import "TimeDisplayLabel.h"
-#import "NSDate+Addition.h"
-#import "AlarmManager.h"
-#import "AppDelegate.h"
+#import "NSDate+Add.h"
+#import "XTlib.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) ClockFace *clockFace ;
@@ -26,7 +25,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        ((AppDelegate *)[UIApplication sharedApplication].delegate).mainVC = self ;
+
     }
     return self;
 }
@@ -96,7 +95,7 @@
 {
     [self.datePicker setDate:[NSDate date] animated:YES] ;
     self.datePicker.alpha = 0 ;
-    [self.view addSubview:self.datePicker] ;
+    [self.view.window addSubview:self.datePicker] ;
     
     [UIView animateWithDuration:1.0 animations:^{
         self.view.backgroundColor = [UIColor darkGrayColor] ;
@@ -151,8 +150,9 @@
             [self confirmSetAlarm] ;
         }]] ;
         [alertCtrller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSString *strSelect = [NSString stringWithFormat:@"%@的闹钟已经设置!",[[AlarmManager shareInstance].alarmTime getTimeString]] ;
-            [self.btAlarm setTitle:strSelect forState:UIControlStateSelected] ;
+//            NSString *strSelect = [NSString stringWithFormat:@"%@的闹钟已经设置!",[[AlarmManager shareInstance].alarmTime getTimeString]] ;
+//
+            [self.btAlarm setTitle:@"success" forState:UIControlStateSelected] ;
             [self letDatePickerDisappear] ;
             self.btAlarm.selected = YES ;
         }]] ;
@@ -163,7 +163,8 @@
 - (void)confirmSetAlarm
 {
     [self.btAlarm setTitle:nil forState:UIControlStateNormal] ;
-    [AlarmManager shareInstance].alarmTime = self.datePicker.date ;
+    
+//    [AlarmManager shareInstance].alarmTime = self.datePicker.date ;
     self.btAlarm.selected = YES ;
     
     [self letDatePickerDisappear] ;

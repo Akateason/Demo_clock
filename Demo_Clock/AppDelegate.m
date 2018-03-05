@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AlarmManager.h"
+
 
 @interface AppDelegate ()
 
@@ -18,38 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [AlarmManager shareInstance] ;
-    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum] ;
 
     return YES;
-}
-
-- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-//    [[NSNotificationCenter defaultCenter] postNotificationName:NSNOTIFICATION_BG_FETCH_NOTES
-//                                                        object:completionHandler] ;
-
-    if (![AlarmManager shareInstance].alarmTime) {
-        completionHandler(UIBackgroundFetchResultNoData) ;
-        return ;
-    }
-    
-    UILocalNotification *localNofify = [[UILocalNotification alloc] init];
-    localNofify.alertBody = [NSString stringWithFormat:@"闹钟来了,呵呵呵?!?"] ;
-    localNofify.soundName = UILocalNotificationDefaultSoundName ;
-    localNofify.repeatInterval = 5 ;
-    [[UIApplication sharedApplication] presentLocalNotificationNow:localNofify] ;
-    
-    [[AlarmManager shareInstance] getAlarmDeta] ;
-    
-    completionHandler(UIBackgroundFetchResultNewData) ;
-    
-}
-
-#pragma mark - didReceiveLocalNotification
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
