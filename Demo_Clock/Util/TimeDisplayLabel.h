@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeDisplayLabel : UILabel
-@property (nonatomic,strong) NSDate *time ;
+
+- (void)setTime:(NSDate *)time ;
+
+- (void)setMMDD:(NSDate *)mmdd ;
+
 @end

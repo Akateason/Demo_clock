@@ -10,7 +10,7 @@ pod 'XTlib'
 
 
 pod 'FDFullscreenPopGesture', '1.1'
-pod 'JKCategories'
+# pod 'JKCategories'
 pod 'IQKeyboardManager'
 
 end

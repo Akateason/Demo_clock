@@ -11,19 +11,14 @@
 
 @implementation TimeDisplayLabel
 
-//- (void)layoutSubviews
-//{
-//    [super layoutSubviews] ;
-//    
-//    [self sizeToFit] ;
-//}
-
-- (void)setTime:(NSDate *)time
-{
-    _time = time ;
-    
+- (void)setTime:(NSDate *)time {
     self.text = [time getTimeString] ;
 }
+
+- (void)setMMDD:(NSDate *)mmdd {
+    self.text = [mmdd getHHMMString] ;
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

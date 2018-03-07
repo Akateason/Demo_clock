@@ -13,7 +13,7 @@
 @implementation NSDate (Add)
 
 - (NSString *)getTimeString {
-    int hour = [self getHour] ;
+    int hour   = [self getHour] ;
     int minute = [self getMinute] ;
     int second = [self getSecond] ;
     
@@ -21,6 +21,15 @@
             [NSString numberDisplayInClock:hour] ,
             [NSString numberDisplayInClock:minute] ,
             [NSString numberDisplayInClock:second]] ;
+}
+
+- (NSString *)getHHMMString {
+    int hour   = [self getHour] ;
+    int minute = [self getMinute] ;
+    
+    return [NSString stringWithFormat:@"%@ : %@" ,
+            [NSString numberDisplayInClock:hour] ,
+            [NSString numberDisplayInClock:minute]] ;
 }
 
 @end

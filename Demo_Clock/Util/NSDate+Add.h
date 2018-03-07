@@ -11,5 +11,6 @@
 @interface NSDate (Add)
 
 - (NSString *)getTimeString ;
+- (NSString *)getHHMMString ;
 
 @end
