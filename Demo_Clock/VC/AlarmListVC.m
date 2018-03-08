@@ -21,15 +21,17 @@
 
 @implementation AlarmListVC
 
+#pragma mark - life
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [Alarm createTable] ;
     self.datasource = [Alarm selectAll] ;
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    [super didReceiveMemoryWarning] ;
 }
 
 - (IBAction)addOnClick:(id)sender {
@@ -57,10 +59,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self performSegueWithIdentifier:@"list2add" sender:self.datasource[indexPath.row]] ;
 }
-
-
 
 #pragma mark - Navigation
 
@@ -68,16 +68,34 @@
     if ([segue.identifier isEqualToString:@"list2add"]) {
         AddAlarmVC *addVC = [segue destinationViewController] ;
         addVC.addPopSignal = [RACReplaySubject replaySubjectWithCapacity:1] ;
+        addVC.editAlarm = sender ;
         @weakify(self)
         [addVC.addPopSignal subscribeNext:^(Alarm *x) {
             @strongify(self)
             NSMutableArray *tmplist = [self.datasource mutableCopy] ;
-            [tmplist addObject:x] ;
+            if (x.isOn) [x start] ;
+            else        [x close] ;
+            
+            if (sender) {
+                // editMode
+                [self.datasource enumerateObjectsUsingBlock:^(Alarm *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (obj.pkid == x.pkid) {
+                        [tmplist replaceObjectAtIndex:idx
+                                           withObject:x] ;
+                        *stop = YES ;
+                    }
+                }] ;
+            }
+            else {
+                // addMode
+                [tmplist addObject:x] ;
+            }
+                        
             self.datasource = tmplist ;
             [self.table reloadData] ;
         }] ;
     }        
 }
 
-
 @end
+

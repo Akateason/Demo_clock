@@ -7,8 +7,9 @@
 //
 
 #import "RootCtrl.h"
-@class RACReplaySubject ;
+@class RACReplaySubject,Alarm ;
 
 @interface AddAlarmVC : RootCtrl
 @property (strong,nonatomic) RACReplaySubject *addPopSignal ;
+@property (strong,nonatomic) Alarm            *editAlarm ;
 @end

@@ -13,12 +13,12 @@
 		8F7F0174204FFFA1008D4399 /* NSString+NumInClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F0171204FFFA1008D4399 /* NSString+NumInClock.m */; };
 		8F7F0175204FFFA1008D4399 /* TimeDisplayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F0173204FFFA1008D4399 /* TimeDisplayLabel.m */; };
 		8F7F0178204FFFC8008D4399 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F0177204FFFC8008D4399 /* Alarm.m */; };
-		8F7F017B20500130008D4399 /* AlarmListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F017A20500130008D4399 /* AlarmListVC.m */; };
-		8F7F017E20500788008D4399 /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F017D20500788008D4399 /* AlarmCell.m */; };
-		8F7F018120500A35008D4399 /* AddAlarmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F018020500A35008D4399 /* AddAlarmVC.m */; };
+		8F7F018B2050DAAF008D4399 /* AddAlarmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F01842050DAAF008D4399 /* AddAlarmVC.m */; };
+		8F7F018C2050DAAF008D4399 /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F01862050DAAF008D4399 /* AlarmCell.m */; };
+		8F7F018D2050DAAF008D4399 /* AlarmListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F01882050DAAF008D4399 /* AlarmListVC.m */; };
+		8F7F018E2050DAAF008D4399 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F018A2050DAAF008D4399 /* ViewController.m */; };
 		D7E8FE6D1C192A39005E908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6C1C192A39005E908F /* main.m */; };
 		D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE6F1C192A39005E908F /* AppDelegate.m */; };
-		D7E8FE731C192A39005E908F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FE721C192A39005E908F /* ViewController.m */; };
 		D7E8FE761C192A39005E908F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E8FE741C192A39005E908F /* Main.storyboard */; };
 		D7E8FE781C192A3A005E908F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E8FE771C192A3A005E908F /* Assets.xcassets */; };
 		D7E8FE7B1C192A3A005E908F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E8FE791C192A3A005E908F /* LaunchScreen.storyboard */; };
@@ -56,19 +56,19 @@
 		8F7F0173204FFFA1008D4399 /* TimeDisplayLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeDisplayLabel.m; path = Util/TimeDisplayLabel.m; sourceTree = "<group>"; };
 		8F7F0176204FFFC8008D4399 /* Alarm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = Model/Alarm.h; sourceTree = "<group>"; };
 		8F7F0177204FFFC8008D4399 /* Alarm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = Model/Alarm.m; sourceTree = "<group>"; };
-		8F7F017920500130008D4399 /* AlarmListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmListVC.h; sourceTree = "<group>"; };
-		8F7F017A20500130008D4399 /* AlarmListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmListVC.m; sourceTree = "<group>"; };
-		8F7F017C20500788008D4399 /* AlarmCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
-		8F7F017D20500788008D4399 /* AlarmCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
-		8F7F017F20500A35008D4399 /* AddAlarmVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmVC.h; sourceTree = "<group>"; };
-		8F7F018020500A35008D4399 /* AddAlarmVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmVC.m; sourceTree = "<group>"; };
+		8F7F01832050DAAF008D4399 /* AddAlarmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmVC.h; sourceTree = "<group>"; };
+		8F7F01842050DAAF008D4399 /* AddAlarmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmVC.m; sourceTree = "<group>"; };
+		8F7F01852050DAAF008D4399 /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
+		8F7F01862050DAAF008D4399 /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
+		8F7F01872050DAAF008D4399 /* AlarmListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmListVC.h; sourceTree = "<group>"; };
+		8F7F01882050DAAF008D4399 /* AlarmListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmListVC.m; sourceTree = "<group>"; };
+		8F7F01892050DAAF008D4399 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8F7F018A2050DAAF008D4399 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BAE010918BE464B58CC8590B /* Pods_Demo_Clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE681C192A39005E908F /* Demo_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FE6C1C192A39005E908F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7E8FE6E1C192A39005E908F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7E8FE6F1C192A39005E908F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7E8FE711C192A39005E908F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D7E8FE721C192A39005E908F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D7E8FE751C192A39005E908F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7E8FE771C192A3A005E908F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7E8FE7A1C192A3A005E908F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,21 +116,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8F7F014A204D4216008D4399 /* V+VC */ = {
-			isa = PBXGroup;
-			children = (
-				D7E8FE711C192A39005E908F /* ViewController.h */,
-				D7E8FE721C192A39005E908F /* ViewController.m */,
-				8F7F017920500130008D4399 /* AlarmListVC.h */,
-				8F7F017A20500130008D4399 /* AlarmListVC.m */,
-				8F7F017C20500788008D4399 /* AlarmCell.h */,
-				8F7F017D20500788008D4399 /* AlarmCell.m */,
-				8F7F017F20500A35008D4399 /* AddAlarmVC.h */,
-				8F7F018020500A35008D4399 /* AddAlarmVC.m */,
-			);
-			name = "V+VC";
-			sourceTree = "<group>";
-		};
 		8F7F016B204FFF44008D4399 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +134,21 @@
 			);
 			name = Clock;
 			path = Model/Clock;
+			sourceTree = "<group>";
+		};
+		8F7F01822050DAAF008D4399 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F01872050DAAF008D4399 /* AlarmListVC.h */,
+				8F7F01882050DAAF008D4399 /* AlarmListVC.m */,
+				8F7F01852050DAAF008D4399 /* AlarmCell.h */,
+				8F7F01862050DAAF008D4399 /* AlarmCell.m */,
+				8F7F01892050DAAF008D4399 /* ViewController.h */,
+				8F7F018A2050DAAF008D4399 /* ViewController.m */,
+				8F7F01832050DAAF008D4399 /* AddAlarmVC.h */,
+				8F7F01842050DAAF008D4399 /* AddAlarmVC.m */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		9435DF38AA400BB21FC4D29F /* Frameworks */ = {
@@ -199,8 +199,8 @@
 			children = (
 				D7E8FE6E1C192A39005E908F /* AppDelegate.h */,
 				D7E8FE6F1C192A39005E908F /* AppDelegate.m */,
+				8F7F01822050DAAF008D4399 /* VC */,
 				8F7F016B204FFF44008D4399 /* Model */,
-				8F7F014A204D4216008D4399 /* V+VC */,
 				D74D49421C33AD2C00FBF02A /* Util */,
 				D7E8FE741C192A39005E908F /* Main.storyboard */,
 				D7E8FE771C192A3A005E908F /* Assets.xcassets */,
@@ -462,17 +462,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7F017B20500130008D4399 /* AlarmListVC.m in Sources */,
 				8F7F0174204FFFA1008D4399 /* NSString+NumInClock.m in Sources */,
 				8F7F016F204FFF92008D4399 /* ClockFace.m in Sources */,
-				D7E8FE731C192A39005E908F /* ViewController.m in Sources */,
 				8F7F014D204D4510008D4399 /* NSDate+Add.m in Sources */,
-				8F7F018120500A35008D4399 /* AddAlarmVC.m in Sources */,
 				D7E8FE701C192A39005E908F /* AppDelegate.m in Sources */,
 				8F7F0175204FFFA1008D4399 /* TimeDisplayLabel.m in Sources */,
+				8F7F018E2050DAAF008D4399 /* ViewController.m in Sources */,
 				D7E8FE6D1C192A39005E908F /* main.m in Sources */,
+				8F7F018D2050DAAF008D4399 /* AlarmListVC.m in Sources */,
+				8F7F018B2050DAAF008D4399 /* AddAlarmVC.m in Sources */,
 				8F7F0178204FFFC8008D4399 /* Alarm.m in Sources */,
-				8F7F017E20500788008D4399 /* AlarmCell.m in Sources */,
+				8F7F018C2050DAAF008D4399 /* AlarmCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

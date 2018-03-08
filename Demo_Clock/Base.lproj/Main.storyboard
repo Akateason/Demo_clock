@@ -155,7 +155,7 @@
         <scene sceneID="xDh-2q-flN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hpw-ZP-F6d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="clock" id="pQk-cv-JU2">
+                    <tabBarItem key="tabBarItem" title="clock" image="clockItem" id="pQk-cv-JU2">
                         <color key="badgeColor" red="0.039406992495059967" green="0.02210584469139576" blue="0.083998434245586395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -194,7 +194,7 @@
         <scene sceneID="FKc-zN-4nG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5j6-mG-ySC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="alarm" id="10v-vr-MUf">
+                    <tabBarItem key="tabBarItem" title="alarm" image="alarmItem" id="10v-vr-MUf">
                         <color key="badgeColor" red="0.039406992495059967" green="0.02210584469139576" blue="0.083998434245586395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -212,4 +212,8 @@
             <point key="canvasLocation" x="47" y="978"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarmItem" width="23" height="24"/>
+        <image name="clockItem" width="24" height="24"/>
+    </resources>
 </document>

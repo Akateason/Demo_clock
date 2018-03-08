@@ -11,16 +11,19 @@
 #import "Alarm.h"
 #import "TimeDisplayLabel.h"
 #import "ReactiveObjC.h"
-#import <UserNotifications/UserNotifications.h>
 #import "XTlib.h"
 
 @interface AddAlarmVC ()
 @property (nonatomic, strong) UIDatePicker *datePicker ;
 @property (weak, nonatomic) IBOutlet TimeDisplayLabel *lbChooseTime;
-
+@property (nonatomic) BOOL isEditMode ;
 @end
 
 @implementation AddAlarmVC
+
+- (BOOL)isEditMode {
+    return self.editAlarm != nil ;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad] ;
@@ -34,40 +37,29 @@
 
 - (IBAction)saveOnClick:(id)sender {
     
-    Alarm *alarm = [[Alarm alloc] initWithName:[self.datePicker.date getHHMMString]
-                                          time:self.datePicker.date] ;
-    [alarm insert] ;
-    [self.addPopSignal sendNext:alarm] ;
-    [self.addPopSignal sendCompleted] ;
+    if (self.isEditMode) {
+        [self.editAlarm editWithName:nil
+                                date:self.datePicker.date
+                                 swt:YES] ;
+        [self.editAlarm update] ;
+        [self.addPopSignal sendNext:self.editAlarm] ;
+        [self.addPopSignal sendCompleted] ;
+    }
+    else {
+        Alarm *alarm = [[Alarm alloc] initWithName:[self.datePicker.date getHHMMString]
+                                              time:self.datePicker.date] ;
+        [alarm insert] ;
+        [self.addPopSignal sendNext:alarm] ;
+        [self.addPopSignal sendCompleted] ;
+    }
+    
     [self.navigationController popViewControllerAnimated:YES] ;
-    
-    // add notification
-    //每周一早上8：00触发  UNCalendarNotificationTrigger
-    NSDateComponents *components = [[NSDateComponents alloc] init] ;
-    components.hour = [[alarm alarmDate] getHour] ;
-    components.minute = [[alarm alarmDate] getMinute] ;
-    
-    UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:components repeats:YES] ;
-    
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    
-    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
-    content.title = [NSString localizedUserNotificationStringForKey:alarm.name arguments:nil] ;
-//    content.body = [NSString localizedUserNotificationStringForKey:LOCALIZE(@"cootek_sign_remind_go")
-//                                                         arguments:nil] ;
-    content.sound = [UNNotificationSound defaultSound] ;
-    
-    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:STR_FORMAT(@"%d",alarm.pkid)
-                                                                          content:content trigger:trigger];
-    
-    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        
-    }] ;
 }
 
 
 - (void)showDatePicker {
-    NSString *string = [[NSDate date] xt_getStrWithFormat:kTIME_STR_FORMAT_5] ;
+    NSDate *oDate = self.isEditMode ? self.editAlarm.alarmDate : [NSDate date] ;
+    NSString *string = [oDate xt_getStrWithFormat:kTIME_STR_FORMAT_5] ;
     NSDate *theDate = [NSDate xt_getDateWithStr:string format:kTIME_STR_FORMAT_5] ;
     
     [self.datePicker setDate:theDate animated:YES] ;

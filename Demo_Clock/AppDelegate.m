@@ -22,6 +22,12 @@
     [[XTFMDBBase sharedInstance] configureDB:@"alarmDB"] ;
     
     [self registerNotification] ;
+    
+    // 背景图颜色
+//    [[UITabBar appearance] setBarTintColor:[UIColor bl]];
+    [[UITabBar appearance] setTintColor:[UIColor blackColor]] ;
+    
+    
     return YES;
 }
 

@@ -19,4 +19,11 @@
 - (instancetype)initWithName:(NSString *)name
                         time:(NSDate *)date ;
 
+- (void)editWithName:(NSString *)name
+                date:(NSDate *)date
+                 swt:(BOOL)swt ;
+
+- (void)start ;
+- (void)close ;
+
 @end
