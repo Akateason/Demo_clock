@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KlO-kj-vFD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" rowHeight="70" id="Vrb-j8-VaN" customClass="AlarmCell">
@@ -88,9 +88,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KlO-kj-vFD" secondAttribute="trailing" id="Iy2-xK-iju"/>
-                            <constraint firstItem="KlO-kj-vFD" firstAttribute="top" secondItem="NeC-aj-95Q" secondAttribute="bottom" id="OjJ-VB-llM"/>
+                            <constraint firstItem="KlO-kj-vFD" firstAttribute="top" secondItem="NWl-6a-0zo" secondAttribute="top" id="OjJ-VB-llM"/>
                             <constraint firstItem="KlO-kj-vFD" firstAttribute="leading" secondItem="NWl-6a-0zo" secondAttribute="leading" id="aur-vY-2em"/>
-                            <constraint firstItem="sE2-NI-zP4" firstAttribute="top" secondItem="KlO-kj-vFD" secondAttribute="bottom" id="iSU-NQ-3It"/>
+                            <constraint firstAttribute="bottom" secondItem="KlO-kj-vFD" secondAttribute="bottom" id="iSU-NQ-3It"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alarms" id="eA0-M4-0P1">
