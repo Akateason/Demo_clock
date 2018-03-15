@@ -11,6 +11,7 @@
 #import "TimeDisplayLabel.h"
 #import "NSDate+Add.h"
 #import "XTlib.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface ViewController ()
 @property (nonatomic, strong) ClockFace *clockFace ;
@@ -59,29 +60,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     [self clockFace] ;
     [self timeLabel] ;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated] ;
+    
+//    self.clockFace.time = nil ;
     [self setupTimer] ;
 }
 
 - (void)setupTimer
 {
-    [[NSRunLoop currentRunLoop] addTimer:[NSTimer scheduledTimerWithTimeInterval:1
-                                                                          target:self
-                                                                        selector:@selector(clockMove)
-                                                                        userInfo:nil
-                                                                         repeats:YES]
-                                 forMode:NSRunLoopCommonModes] ;
+    @weakify(self)
+    [[[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]]
+      takeUntil:[self rac_signalForSelector:@selector(viewWillDisappear:)]]
+     subscribeNext:^(NSDate * _Nullable x) {
+         
+         @strongify(self)
+         self.clockFace.time = x ;
+         self.timeLabel.time = x ;
+         
+     }] ;
 }
 
-- (void)clockMove
-{
-    NSDate *now = [NSDate date] ;
-    self.clockFace.time = now ;
-    self.timeLabel.time = now ;
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
