@@ -10,7 +10,7 @@
 #import "XTlib.h"
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -24,7 +24,6 @@
     [self registerNotification] ;
     
     // 背景图颜色
-//    [[UITabBar appearance] setBarTintColor:[UIColor bl]];
     [[UITabBar appearance] setTintColor:[UIColor blackColor]] ;
     
     
@@ -38,7 +37,7 @@
     center.delegate = self;
     
     //iOS 10 使用以下方法注册，才能得到授权，注册通知以后，会自动注册 deviceToken，如果获取不到 deviceToken，Xcode8下要注意开启 Capability->Push Notification。
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge)
                           completionHandler:^(BOOL granted, NSError * _Nullable error) {
                               // Enable or disable features based on authorization.
                           }] ;
@@ -49,6 +48,14 @@
     }] ;
 }
 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+    [UIApplication sharedApplication].applicationIconBadgeNumber += 1 ;
+}
+
+
+
+#pragma mark -
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

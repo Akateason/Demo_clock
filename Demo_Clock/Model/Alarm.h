@@ -8,7 +8,7 @@
 
 #import <XTFMDB/XTFMDB.h>
 
-@interface Alarm : XTDBModel
+@interface Alarm : XTDBModel 
 
 @property (copy,nonatomic)      NSString *name ;
 @property (strong,nonatomic)    NSString *alarmDateString ;

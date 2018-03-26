@@ -38,7 +38,7 @@
 - (IBAction)saveOnClick:(id)sender {
     
     if (self.isEditMode) {
-        [self.editAlarm editWithName:nil
+        [self.editAlarm editWithName:[self.datePicker.date getHHMMString]
                                 date:self.datePicker.date
                                  swt:YES] ;
         [self.editAlarm update] ;

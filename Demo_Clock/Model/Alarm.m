@@ -12,6 +12,10 @@
 #import "XTlib.h"
 #import "NSDate+Add.h"
 
+@interface Alarm () <UNUserNotificationCenterDelegate>
+
+@end
+
 @implementation Alarm
 
 - (instancetype)initWithName:(NSString *)name
@@ -48,22 +52,34 @@
     
     UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:components repeats:YES] ;
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter] ;
-    
+    center.delegate = self ;
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init] ;
     content.title = [NSString localizedUserNotificationStringForKey:self.name arguments:nil] ;
 //    content.body = [NSString localizedUserNotificationStringForKey:LOCALIZE(@"cootek_sign_remind_go") arguments:nil] ;
     content.sound = [UNNotificationSound defaultSound] ;
-    content.badge = @100 ;
-    
-    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:STR_FORMAT(@"%d",self.pkid)
-                                                                          content:content
-                                                                          trigger:trigger] ;
+    content.badge = @1 ;
+//    [UIApplication sharedApplication].applicationIconBadgeNumber += 1 ;
+    UNNotificationRequest* request =
+    [UNNotificationRequest requestWithIdentifier:STR_FORMAT(@"%d",self.pkid)
+                                         content:content
+                                         trigger:trigger] ;
     
     [center addNotificationRequest:request
              withCompletionHandler:^(NSError * _Nullable error) {
-        
+            
     }] ;
+    
+    
 }
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+    completionHandler(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge) ;
+    
+//    NSLog(@"dddddd") ;
+    [UIApplication sharedApplication].applicationIconBadgeNumber += 1 ;
+}
+
 
 - (void)close {
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter] ;
