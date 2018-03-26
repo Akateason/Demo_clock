@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Alarm dropTable] ;
-    [Alarm xt_createTable] ;
+//    [Alarm dropTable] ;
+    [Alarm createTable] ;
     self.datasource = [Alarm selectAll] ;
 }
 

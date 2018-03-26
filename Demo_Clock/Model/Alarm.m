@@ -18,6 +18,23 @@
 
 @implementation Alarm
 
++ (NSDictionary *)modelPropertiesSqliteKeywords
+{
+    return @{
+             @"name" : @"UNIQUE"
+             } ;
+}
+
++ (NSArray *)ignoreProperties
+{
+    return @[
+             @"hash",@"superclass",@"description",@"debugDescription"
+             ] ;
+}
+
+
+
+
 - (instancetype)initWithName:(NSString *)name
                         time:(NSDate *)date
 {
