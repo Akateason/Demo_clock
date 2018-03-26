@@ -18,6 +18,13 @@
     Alarm *alarm = self.model ;
     alarm.isOn = sender.on ;
     [alarm update] ;
+    
+    if (alarm.isOn) {
+        [alarm start] ;
+    }
+    else {
+        [alarm close] ;
+    }
 }
 
 + (CGFloat)cellHeight {
